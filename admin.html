@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Certificate dApp - Admin Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- <link href="css/scrolling-nav.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/admin.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+  <div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <a href="index.html">Certificate dApp</a>
+          <div id="close-sidebar">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="sidebar-header">
+          <div class="user-pic">
+            <img class="img-responsive img-rounded"
+              src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+              alt="User picture">
+          </div>
+          <div class="user-info">
+            <span class="user-name">Jhon
+              <strong>Smith</strong>
+            </span>
+            <span class="user-role">Administrator</span>
+            <span class="user-status">
+              <i class="fa fa-circle"></i>
+              <span>Online</span>
+            </span>
+          </div>
+        </div>
+        <!-- sidebar-header  -->
+        <div class="sidebar-search">
+          <div>
+            <div class="input-group">
+              <input type="text" class="form-control search-menu" placeholder="Search...">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul>
+            <li class="header-menu">
+              <span>General</span>
+            </li>
+            <li class="sidebar">
+              <a href="admin.html">
+                <i class="fa fa-tachometer-alt"></i>
+                <span>Admin Dashboard</span>
+                <span class="badge badge-pill badge-warning">New</span>
+              </a>
+            </li>
+
+            <li class="sidebar">
+              <a href="student.html">
+                <i class="fa fa-tachometer-alt"></i>
+                <span>Student Dashboard</span>
+                <span class="badge badge-pill badge-warning">New</span>
+              </a>
+            </li>
+
+            <li class="header-menu">
+              <span>Extra</span>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-book"></i>
+                <span>Documentation</span>
+                <span class="badge badge-pill badge-primary">Beta</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+      <div class="sidebar-footer">
+        <a href="#">
+          <i class="fa fa-bell"></i>
+          <span class="badge badge-pill badge-warning notification">3</span>
+        </a>
+        <a href="#">
+          <i class="fa fa-envelope"></i>
+          <span class="badge badge-pill badge-success notification">7</span>
+        </a>
+        <a href="#">
+          <i class="fa fa-cog"></i>
+          <span class="badge-sonar"></span>
+        </a>
+        <a href="#">
+          <i class="fa fa-power-off"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- sidebar-wrapper  -->
+    <main class="page-content">
+      <h2>Certificate dApp</h2>
+      <hr>
+      <div class="container-fluid text-center">
+        <button type="button" class="btn btn-primary btn-lg">Total Number of Students</button>
+        <button type="button" class="btn btn-primary btn-lg">Total Number of Admins</button>
+        <button type="button" class="btn btn-primary btn-lg">Admin Limit</button>
+        <button type="button" class="btn btn-primary btn-lg">Total Amount Donated</button>
+      </div>
+
+      <h6>Only Owner can access this section</h6>
+      <div class="container-fluid shadow-sm">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                  <button type="submit" class="btn btn-primary">View Admin</button>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter address">
+                  <button type="submit" class="btn btn-primary">Add Admin</button>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter address ">
+                  <button type="submit" class="btn btn-primary">Transfer Admin</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter new limit address ">
+                  <button type="submit" class="btn btn-primary">Update Admin Limit</button>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                  <button type="submit" class="btn btn-primary">Remove Admin</button>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">View Admin</button>
+          </div>
+          </form>
+        </div>
+      </div>
+
+      <hr>
+      <h6>Only Admin can access this section</h6>
+      <div class="container-fluid shadow-sm">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="email" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter address">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter new limit address ">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter new limit address ">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-lg">Add Student</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Commendation</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Grade</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Commendation</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Grade</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Email</button>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-4">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Add Student Assignment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Assignment</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1"
+                    placeholder="enter admin index number ">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="form-group col-md-6">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-md">Update Student Assignment</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+  <script src="js/adminScript.js"></script>
+
+</body>
+
+</html>
