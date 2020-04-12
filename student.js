@@ -2,7 +2,7 @@ import Cert from './build/contracts/Cert.json';
 
 let web3;
 let cert;
-
+ 
 const initWeb3 = () => {
 return new Promise((resolve, reject) => {
     if(typeof window.ethereum !== 'undefined') {
@@ -47,6 +47,7 @@ const getAssignmentInfo = document.getElementById('getAssignmentInfo');
 const getAssignmentResult = document.getElementById('get-assignment-result');
 const changeStudentName = document.getElementById('changeStudentName');
 const studentNameResult = document.getElementById('student-name-result');
+const hideAdmin = document.getElementById('hideAdmin');
 
 let accounts = [];
   let accountInterval = setInterval(function() {
@@ -54,7 +55,6 @@ let accounts = [];
   accounts = _accounts;
   });
    }, 100);
-
 
   changeStudentName.addEventListener('click', (e) => {
     e.preventDefault();

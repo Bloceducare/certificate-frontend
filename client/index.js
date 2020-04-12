@@ -90,13 +90,20 @@ const initApp = () => {
   const witResult = document.getElementById('wit-result');
   const ethDonated = document.getElementById('ethDonated');
   const ethResult = document.getElementById('eth-result');
+  const hideAdmin = document.getElementById('hideAdmin');
   
-  let accounts = [];
+  let accounts;
   let accountInterval = setInterval(function() {
   web3.eth.getAccounts().then(_accounts => {
 	accounts = _accounts;
 	});
    }, 100);
+
+
+
+ web3.eth.getAccounts().then(function(acc){accounts=acc;});
+
+
   
     addAdmin.addEventListener('click', (e) => {
       e.preventDefault();
@@ -343,9 +350,9 @@ adminsReverseMapping.addEventListener('click', (e) => {
     const email =  document.getElementById('number0').value;
    
    // const email = e.target.elements[0].value;
-  cert.methods.adminsReverseMapping(email).call()
+  cert.methods.admins(email).call()
     .then(result => {
-      minResult.innerHTML = `admin address: ${result} `;
+      minResult.innerHTML = `admin address: ${result[0]} ${result[1]}`;
     })
     .catch(_e => {
       minResult.innerHTML = `there was an error while trying to read user `;
@@ -405,6 +412,6 @@ document.addEventListener('DOMContentLoaded', () => {
       web3 = _web3;
       cert = initContract();
       initApp();
-    })
+	  })
     .catch(e => console.log(e.message));
 });

@@ -477,3 +477,7 @@ body {
 .chiller-theme .sidebar-footer > a:last-child {
 	border-right: none;
 }
+
+.adminDashboard{
+	display: none;
+}

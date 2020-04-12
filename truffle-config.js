@@ -4,11 +4,13 @@ const mnemonic = "retire debris evil chase muscle tribe acoustic august tail bal
 
 module.exports = {
   networks: {
-    ropsten: {
+    rinkeby: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/c5787339db824d0c8383ce97bff4dbb1")
+        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/c5787339db824d0c8383ce97bff4dbb1")
       },
-      network_id:"3", 
+      network_id:"4",
+       gas : 6700000
+      , gasPrice : 10000000000
     }
   }
 };

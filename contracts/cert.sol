@@ -41,7 +41,7 @@ contract Cert is Ownable {
     
     // ENUMS
     
-    // ENUMS FOR THE STUDENT GRADE
+    // ENUM FOR THE STUDENT GRADE
     
     enum  grades {Good, Great, Outstanding, Epic, Legendary}
     

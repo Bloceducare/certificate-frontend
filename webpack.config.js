@@ -1,11 +1,13 @@
-
 const path = require('path');
+//var nodeExternals = require('webpack-node-externals');
 
+//const fs = require('fs');
 module.exports = {
   mode: 'development',
   entry:{ 
 	admins: './client/index.js',
-	 student: './student.js'
+	 student: './student.js',
+   indexx: './indexx.js'
   },
   output: {
 	  path: path.resolve(__dirname,  'public'),
@@ -17,5 +19,18 @@ module.exports = {
     port: 8080,
 //	  devtool: 'inline-source-map'
 
+//   },
+//   module: {
+//       rules: [
+//         {
+//           exclude: /node_modules/
+//         }]
+//       },
+// node: {
+//     fs: "empty"
   }
+// },
+//     resolve: {
+//       extensions: ['.js']},
+// 	externals: [nodeExternals()]
 };
