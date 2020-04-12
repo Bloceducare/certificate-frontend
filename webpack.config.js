@@ -6,8 +6,8 @@ module.exports = {
   mode: 'development',
   entry:{ 
 	admins: './client/index.js',
-	 student: './student.js',
-   indexx: './indexx.js'
+   student: './client/student.js',
+   indexx: './client/indexx.js'
   },
   output: {
 	  path: path.resolve(__dirname,  'public'),
