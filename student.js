@@ -39,6 +39,14 @@ const initContract = () => {
 
 
 const initApp = () => {
+  
+   web3.eth.net.getNetworkType()
+.then(result => {
+  if(result == 'rinkeby'){}
+    else{
+      alert('please use rinkeby')
+    };
+});
 const students = document.getElementById('students');
 const stuResult = document.getElementById('stu-result');
 const donateEth = document.getElementById('donateEth');

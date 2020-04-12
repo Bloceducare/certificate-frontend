@@ -38,6 +38,15 @@ const initContract = () => {
 };
 
 const initApp = () => {
+
+   web3.eth.net.getNetworkType()
+.then(result => {
+  if(result == 'rinkeby'){}
+    else{
+      alert('please use rinkeby')
+    };
+});
+  
   const addAdmin = document.getElementById('addAdmin');
   const addResult = document.getElementById('add-result');
   const removeAdmin = document.getElementById('removeAdmin');
