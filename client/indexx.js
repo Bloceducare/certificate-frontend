@@ -26,7 +26,7 @@ return new Promise((resolve, reject) => {
     resolve(new Web3(alert(`You are currently not logged in! Please login to your metamask account and switch to infura testnet then try again. Don't have a metamask? Click here (https://metamask.io/download.html)`)));
   });
 
- 
+} 
 
 const initContract = () => {
   const deploymentKey = Object.keys(Cert.networks)[0];
@@ -39,8 +39,7 @@ const initContract = () => {
 };
 
 const switchHtmlPage = () => { 
-
-   web3.eth.net.getNetworkType()
+ web3.eth.net.getNetworkType()
 .then(result => {
   if(result == 'rinkeby'){}
     else{
@@ -48,35 +47,28 @@ const switchHtmlPage = () => {
     };
 });
   
-window.onload = function(e) {
- const b = '0xA5B8aa3f4B63F45C8B0Fb1E5D9ae38e2D287fd81';
-  let accounts = [];
-  let accountInterval = setInterval(function() {
-  web3.eth.getAccounts().then(_accounts => {
-  accounts = _accounts;
-  });
-   }, 100);
-
-  //cert.methods.admins(accounts[0]).call()
-  cert.methods.admins(b).call()
+window.onclick = function(e) {
+   let accountInterval = setInterval(function() {
+    web3.eth.getAccounts().then(_accounts => {
+    cert.methods.admins(_accounts[0]).call()
       .then(result => {
-  if(result[0] == true) {
-  document.getElementById("design-button").onclick = function() {
-    this.href = "admin.html";
-     };}
-  else{
+    if(result[0] == true) {
     document.getElementById("design-button").onclick = function() {
-    this.href = "student.html";
-     };
-  }
-});
+      this.href = "admin.html";
+       };}
+    else{
+      document.getElementById("design-button").onclick = function() {
+      this.href = "student.html";
+       };
     }
+    });
+     }) }, 100);
+  }
 
-    ();
+  ();
      
- };
-	
-
+};
+  
 document.addEventListener('DOMContentLoaded', () => {
   initWeb3()
     .then(_web3 => {
