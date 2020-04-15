@@ -40,33 +40,33 @@ const initContract = () => {
 
 const switchHtmlPage = () => { 
  web3.eth.net.getNetworkType()
-.then(result => {
-  if(result == 'rinkeby'){}
-    else{
-      alert('please use rinkeby')
-    };
-});
+  .then(result => {
+    if(result == 'rinkeby'){}
+      else{
+        alert('please use rinkeby')
+      };
+  });
   
-window.onclick = function(e) {
-   let accountInterval = setInterval(function() {
-    web3.eth.getAccounts().then(_accounts => {
-    cert.methods.admins(_accounts[0]).call()
-      .then(result => {
-    if(result[0] == true) {
-    document.getElementById("design-button").onclick = function() {
-      this.href = "admin.html";
-       };}
-    else{
-      document.getElementById("design-button").onclick = function() {
-      this.href = "student.html";
-       };
-    }
-    });
-     }) }, 100);
+  window.onclick = function(e) {
+     let accountInterval = setInterval(function() {
+      web3.eth.getAccounts().then(_accounts => {
+      cert.methods.admins(_accounts[0]).call()
+        .then(result => {
+          if(result[0] == true) {
+          document.getElementById("design-button").onclick = function() {
+            this.href = "admin.html";
+             };}
+          else{
+            document.getElementById("design-button").onclick = function() {
+            this.href = "student.html";
+             };
+          }
+          });
+           }) 
+    }, 100);
   }
 
   ();
-     
 };
   
 document.addEventListener('DOMContentLoaded', () => {

@@ -27,6 +27,7 @@ return new Promise((resolve, reject) => {
   });
 }  
 
+
 const initContract = () => {
   const deploymentKey = Object.keys(Cert.networks)[0];
   return new web3.eth.Contract(
@@ -37,9 +38,26 @@ const initContract = () => {
   );
 };
 
+const checkAddress = () => {
+  window.onload = function(e) {
+  const addressCheck = document.getElementById('hideAdmin');
+   let accountInterval = setInterval(function() {
+    web3.eth.getAccounts().then(_accounts => {
+    cert.methods.admins(_accounts[0]).call()
+      .then(result => {
+    if(result[0] == true) {} 
+      else{
+    addressCheck.classList.add('studentDashboard')};
+    });
+     }) }, 100);
+  }
+
+  ();
+}
+
 
 const initApp = () => {
-  
+
    web3.eth.net.getNetworkType()
 .then(result => {
   if(result == 'rinkeby'){}
@@ -47,6 +65,7 @@ const initApp = () => {
       alert('please use rinkeby')
     };
 });
+
 const students = document.getElementById('students');
 const stuResult = document.getElementById('stu-result');
 const donateEth = document.getElementById('donateEth');
@@ -69,9 +88,7 @@ let accounts = [];
     const fName =  document.getElementById('fName1').value;
     const lName =  document.getElementById('lName1').value;
     const email =  document.getElementById('email8').value;
-//    const fName = e.target.elements[0].value;
-   // const lName = e.target.elements[1].value;
-   // const email = e.target.elements[2].value;
+
     cert.methods.changeStudentName(email, fName, lName).send({from: accounts[0]})
     .then(result => {
       studentNameResult.innerHTML = `Student name changed`;
@@ -85,9 +102,8 @@ getAssignmentInfo.addEventListener('click', (e) => {
     e.preventDefault();
     const email =  document.getElementById('email9').value;
     const assId =  document.getElementById('number2').value;
-    //const email = e.target.elements[0].value;
-    //const assId = e.target.elements[1].value;
-        cert.methods.getAssignmentInfo(email, assId).call()
+   
+    cert.methods.getAssignmentInfo(email, assId).call()
     .then(result => {
       getAssignmentResult.innerHTML = `link: ${result[0]} <br> status:
        ${result[1]}`;
@@ -100,8 +116,7 @@ getAssignmentInfo.addEventListener('click', (e) => {
  students.addEventListener('click', (e) => {
     e.preventDefault();
     const email =  document.getElementById('email7').value;
-    
-    //const id = e.target.elements[0].value;
+      
   cert.methods.searchStudent(email).call()
     .then(result => {
       stuResult.innerHTML = `student First Name: ${result[0]} <br>  student Last Name:
@@ -118,7 +133,6 @@ donateEth.addEventListener('click', (e) => {
     const deploymentKey = Object.keys(Cert.networks)[0];
     const amount =  document.getElementById('number3').value;
     
-    //const amount = e.target.elements[0].value;
     web3.eth.sendTransaction({from: accounts[0], to: Cert.networks[deploymentKey].address, value: web3.utils.toWei(amount, 'ether')})
   });
 };
@@ -128,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(_web3 => {
       web3 = _web3;
       cert = initContract();
+      checkAddress();
       initApp();
     })
     .catch(e => console.log(e.message));
