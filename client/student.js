@@ -45,7 +45,7 @@ const checkAddress = () => {
     web3.eth.getAccounts().then(_accounts => {
     cert.methods.admins(_accounts[0]).call()
       .then(result => {
-    if(result[0] == true) {} 
+    if(result[0] == true) {addressCheck.classList.remove('studentDashboard')} 
       else{
     addressCheck.classList.add('studentDashboard')};
     });
